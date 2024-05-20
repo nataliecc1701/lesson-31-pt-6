@@ -75,3 +75,13 @@ class JosephusList {
     return this.head;
   }
 }
+
+function findSurvivor(count, skip) {
+    vals = []
+    for (let i=0; i<count; i++) {
+        vals.push(i)
+    }
+    josphLst = new JosephusList(vals)
+    
+    return josphLst.cull(skip)
+}
