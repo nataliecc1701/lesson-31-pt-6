@@ -1,0 +1,21 @@
+// Pseudocode for a browser back/forward.
+
+let currentPage;
+const backStack = new Stack();
+const foreStack = new Stack();
+
+function backBtn() {
+    foreStack.push(currentPage);
+    currentPage = backStack.pop();
+}
+
+function foreBtn() {
+    backStack.push(currentPage);
+    currentPage = foreStack.pop();
+}
+
+function navigate(newPage) {
+    foreStack = new Stack(); // Empty the browser forward Stack
+    backStack.push(currentPage);
+    currentPage = newPage;
+}
